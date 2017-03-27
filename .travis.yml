@@ -46,3 +46,12 @@ notifications:
     - csontos.valentin@gmail.com
     on_failure: always
     on_success: always
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "7e44920430bc6b0508f2c90765962070ea2dc7e7"
+  file: "app/build/outputs/apk/app*.apk"
+  skip_cleanup: true
+  on:
+    tags: true

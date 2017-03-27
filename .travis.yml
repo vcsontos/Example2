@@ -50,7 +50,7 @@ notifications:
 deploy:
   provider: releases
   api_key:
-    secure: "7e44920430bc6b0508f2c90765962070ea2dc7e7"
+    secure: "4bf5ec7ab715c2a8309d96f2d427a01cb69bb07d"
   file: "app/build/outputs/apk/app*.apk"
   skip_cleanup: true
   on:

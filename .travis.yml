@@ -46,7 +46,6 @@ deploy:
   on:
     repo: vcsontos/Example2
     branch: develop
-    tags: true
 
 after_success:
 - sh set_tags.sh

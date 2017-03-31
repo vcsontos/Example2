@@ -40,9 +40,13 @@ deploy:
   provider: releases
   api_key:
     secure: LgI2gzNYgiSVu6h/9YwMspWsA8rYJ0PKOzQJw5LwYVGFJMvIxhn/01gQqt5GroPGIA8/t8doyQ7BmJi2ViQHEaPgK6uIqN349tLFxDpldc6ETsaj1hjStzkMUuaWK9g3xGisi5zqE9nAUqVY+N72FhCy4V19PgXH+woU4T1PQ5gdyIOrhxVOd4utRupCux5Jgl+Un+bPRJ5wQeY2diPd3w8ae1ovwSsonclMYzvUeWe0kJ5YVLV/DLgjNvCNTP8ANfoBKcMlhJbXVFn1ts0QE0Irk02k0dIrlfSmWOKxQhI1SoTU2KI8Numf3wOP1LUCHt7wte5D6RAV2+vKaNMFw4dMJcneNRgdE8Jhc47Bo7Sk0nc8+QYjMW51n2JRC+ilkQdRc7MqzvXBSw6OyPrbSruWVMMPFyaAfCegCVd7CZErRq2ZtBxlqlZD45sg1ratkSRmkOr/Oai24HpJHtGJGqjEDxpN3TO2cn25EOWGkJc2HkkqXu+ZewYGxa0RjNG5zem8HYSYvueTZy2CRQMxfJnqcztEj867gI4Do20uK+TNtdaGxSEdmVULyPlLhi4SJGV24ckUM0aZDUrVLin552Es8PG/qn0t8FUuUjneKl6UMRLgxqVD0hR1HUV0AwzqWDTa+SxrwlavNDruN7xorpNSUPrTRBs0PqIWUwz00Bs=
-  file: app/build/outputs/apk/app-release.apk
+  file: app/build/outputs/apk/app*release*.apk
+  file_glob: "true"
   skip_cleanup: true
   on:
     repo: vcsontos/Example2
     branch: develop
     tags: true
+
+after_success:
+- sh set_tags.sh
